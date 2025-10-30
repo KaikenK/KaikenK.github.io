@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dhruv - Full Stack Developer & Designer. Futuristic portfolio showcasing innovative projects and cutting-edge web solutions.">
+    <meta name="keywords" content="web developer, full stack, portfolio, software engineer, neon design, cyberpunk">
+    <meta name="author" content="Dhruv">
+    <meta name="theme-color" content="#00ff88">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Dhruv - Futuristic Developer Portfolio">
+    <meta property="og:description" content="Explore my cutting-edge projects and innovative web solutions">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://KaikenK.github.io">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dhruv - Developer Portfolio">
+    
+    <title>Dhruv | Futuristic Developer Portfolio</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="cyber-loader">
+                <div class="cyber-circle"></div>
+                <div class="cyber-circle"></div>
+                <div class="cyber-circle"></div>
+            </div>
+            <h2 class="neon-text glitch" data-text="INITIALIZING">INITIALIZING</h2>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <p class="loading-text">Loading Experience...</p>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text neon-text">DHRUV</span>
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-right">
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-sun sun-icon"></i>
+                    <i class="fas fa-moon moon-icon"></i>
+                </button>
+                
+                <!-- Hamburger -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-effects">
+            <div class="cyber-grid"></div>
+            <div class="glow-orb glow-orb-1"></div>
+            <div class="glow-orb glow-orb-2"></div>
+            <div class="glow-orb glow-orb-3"></div>
+        </div>
+        
+        <div class="container hero-container">
+            <div class="hero-content" data-parallax="0.2">
+                <div class="hero-label">
+                    <span class="status-dot"></span>
+                    <span>Available for opportunities</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    <span class="greeting">Hello, I'm</span>
+                    <span class="name neon-text glitch" data-text="DHRUV">DHRUV</span>
+                </h1>
+                
+                <div class="hero-subtitle">
+                    <span class="typing-prefix">I craft </span>
+                    <span class="typed-text neon-text"></span>
+                    <span class="cursor-blink">|</span>
+                </div>
+                
+                <p class="hero-description">
+                    Full Stack Developer • UI/UX Enthusiast • Creative Problem Solver
+                    <br>
+                    Transforming ideas into immersive digital experiences
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="projects.html" class="btn btn-primary neon-btn">
+                        <span>View My Work</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary cyber-btn">
+                        <span>Get In Touch</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </a>
+                </div>
+                
+                <div class="hero-social">
+                    <a href="https://github.com/KaikenK" target="_blank" class="social-icon" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" target="_blank" class="social-icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" target="_blank" class="social-icon" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="mailto:your.email@example.com" class="social-icon" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual" data-parallax="0.3">
+                <div class="floating-container">
+                    <div class="hologram-card">
+                        <div class="hologram-content">
+                            <i class="fas fa-code code-icon"></i>
+                            <div class="scan-line"></div>
+                        </div>
+                        <div class="corner corner-tl"></div>
+                        <div class="corner corner-tr"></div>
+                        <div class="corner corner-bl"></div>
+                        <div class="corner corner-br"></div>
+                    </div>
+                    
+                    <!-- Floating Tech Icons -->
+                    <div class="floating-icon" style="--delay: 0s; --x: -50px; --y: -80px;">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="floating-icon" style="--delay: 0.5s; --x: 60px; --y: -60px;">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <div class="floating-icon" style="--delay: 1s; --x: -70px; --y: 70px;">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="floating-icon" style="--delay: 1.5s; --x: 80px; --y: 80px;">
+                        <i class="fab fa-js"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- Quick Stats Section -->
+    <section class="quick-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="stat-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number neon-text" data-target="50">0</h3>
+                        <p class="stat-label">Projects Completed</p>
+                    </div>
+                    <div class="stat-glow"></div>
+                </div>
+                
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number neon-text" data-target="1000">0</h3>
+                        <p class="stat-label">GitHub Commits</p>
+                    </div>
+                    <div class="stat-glow"></div>
+                </div>
+                
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number neon-text" data-target="25">0</h3>
+                        <p class="stat-label">Happy Clients</p>
+                    </div>
+                    <div class="stat-glow"></div>
+                </div>
+                
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number neon-text" data-target="15">0</h3>
+                        <p class="stat-label">Awards Won</p>
+                    </div>
+                    <div class="stat-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Preview -->
+    <section class="featured-projects">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">
+                    <span class="label-line"></span>
+                    <span>PORTFOLIO</span>
+                    <span class="label-line"></span>
+                </span>
+                <h2 class="section-title">
+                    Featured <span class="neon-text">Projects</span>
+                </h2>
+                <p class="section-subtitle">
+                    Check out some of my latest work that pushes the boundaries
+                </p>
+            </div>
+            
+            <div class="projects-preview">
+                <div class="project-preview-card" data-aos="fade-up" data-parallax="0.1">
+                    <div class="project-preview-image">
+                        <img src="https://via.placeholder.com/800x500/0a0a0f/00ff88?text=Project+1" alt="Project 1">
+                        <div class="project-preview-overlay">
+                            <div class="overlay-content">
+                                <h3>E-Commerce Platform</h3>
+                                <p>Full-stack solution with AI recommendations</p>
+                                <div class="project-tech">
+                                    <span>React</span>
+                                    <span>Node.js</span>
+                                    <span>MongoDB</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link-btn">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="project-link-btn">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-preview-card" data-aos="fade-up" data-aos-delay="100" data-parallax="0.15">
+                    <div class="project-preview-image">
+                        <img src="https://via.placeholder.com/800x500/0a0a0f/0ff?text=Project+2" alt="Project 2">
+                        <div class="project-preview-overlay">
+                            <div class="overlay-content">
+                                <h3>AI Task Manager</h3>
+                                <p>Smart productivity app with ML integration</p>
+                                <div class="project-tech">
+                                    <span>Vue.js</span>
+                                    <span>Python</span>
+                                    <span>TensorFlow</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link-btn">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="project-link-btn">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-preview-card" data-aos="fade-up" data-aos-delay="200" data-parallax="0.2">
+                    <div class="project-preview-image">
+                        <img src="https://via.placeholder.com/800x500/0a0a0f/ff0080?text=Project+3" alt="Project 3">
+                        <div class="project-preview-overlay">
+                            <div class="overlay-content">
+                                <h3>Crypto Dashboard</h3>
+                                <p>Real-time cryptocurrency tracking & analytics</p>
+                                <div class="project-tech">
+                                    <span>React</span>
+                                    <span>Web3</span>
+                                    <span>Charts.js</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link-btn">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="project-link-btn">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" data-aos="fade-up">
+                <a href="projects.html" class="btn btn-primary neon-btn">
+                    <span>View All Projects</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <div class="cta-bg-glow"></div>
+                <h2 class="cta-title">
+                    Let's Build Something <span class="neon-text">Amazing</span>
+                </h2>
+                <p class="cta-text">
+                    Have a project in mind? Let's collaborate and create something extraordinary together.
+                </p>
+                <a href="contact.html" class="btn btn-primary neon-btn btn-large">
+                    <span>Start a Project</span>
+                    <i class="fas fa-rocket"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <span class="logo-bracket">&lt;</span>
+                        <span class="logo-text neon-text">DHRUV</span>
+                        <span class="logo-bracket">/&gt;</span>
+                    </div>
+                    <p class="footer-tagline">Crafting the future, one line at a time</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Navigate</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="https://github.com/KaikenK" target="_blank">GitHub</a></li>
+                            <li><a href="#" target="_blank">LinkedIn</a></li>
+                            <li><a href="#" target="_blank">Twitter</a></li>
+                            <li><a href="mailto:your.email@example.com">Email</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="https://github.com/KaikenK" target="_blank" class="footer-social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" target="_blank" class="footer-social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" target="_blank" class="footer-social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="mailto:your.email@example.com" class="footer-social-icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dhruv. Crafted with <i class="fas fa-heart neon-text"></i> and <i class="fas fa-code neon-text"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/preloader.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/parallax.js"></script>
+    <script src="js/stats.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
