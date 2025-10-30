@@ -1,60 +1,60 @@
 /* ==================== ROOT VARIABLES ==================== */
+/* Japanese Zen Minimalism - Yin Yang Theme */
 :root {
-    /* Neon Colors */
-    --neon-primary: #00ff88;
-    --neon-secondary: #00ffff;
-    --neon-pink: #ff0080;
-    --neon-purple: #b026ff;
-    --neon-blue: #0080ff;
-    --neon-yellow: #ffff00;
+    /* Yin-Yang Theme Colors (Yin - 陰: Dark) */
+    --zen-dark: #000000;
+    --zen-light: #ffffff;
+    --zen-accent: #cc0000;
+    --zen-gray: #888888;
+    --zen-gray-light: #cccccc;
     
-    /* Dark Theme */
-    --bg-dark: #0a0a0f;
-    --bg-darker: #050508;
-    --bg-card: #12121a;
-    --bg-card-hover: #1a1a25;
+    /* Dark Theme (Yin) */
+    --bg-dark: #000000;
+    --bg-darker: #0a0a0a;
+    --bg-card: #1a1a1a;
+    --bg-card-hover: #222222;
     
-    /* Light Theme */
-    --bg-light: #f5f5f5;
+    /* Light Theme (Yang) */
+    --bg-light: #fafafa;
     --bg-lighter: #ffffff;
     --bg-card-light: #ffffff;
-    --text-dark: #1a1a1a;
+    --text-dark: #000000;
     
     /* Text Colors */
     --text-primary: #ffffff;
-    --text-secondary: #b0b0b0;
-    --text-muted: #6b6b6b;
+    --text-secondary: #999999;
+    --text-muted: #666666;
     
-    /* Gradients */
-    --gradient-neon: linear-gradient(135deg, var(--neon-primary) 0%, var(--neon-secondary) 100%);
-    --gradient-pink: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-purple) 100%);
-    --gradient-cyber: linear-gradient(135deg, var(--neon-blue) 0%, var(--neon-purple) 100%);
+    /* Minimal Gradients */
+    --gradient-zen: linear-gradient(135deg, var(--zen-dark) 0%, var(--zen-gray) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--zen-accent) 0%, var(--zen-dark) 100%);
     
-    /* Glow Effects */
-    --glow-primary: 0 0 20px var(--neon-primary), 0 0 40px var(--neon-primary), 0 0 60px var(--neon-primary);
-    --glow-secondary: 0 0 20px var(--neon-secondary), 0 0 40px var(--neon-secondary);
-    --glow-pink: 0 0 20px var(--neon-pink), 0 0 40px var(--neon-pink);
+    /* Subtle Shadows */
+    --shadow-soft: 0 2px 20px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 30px rgba(0, 0, 0, 0.15);
+    --shadow-strong: 0 8px 40px rgba(0, 0, 0, 0.2);
     
     /* Spacing */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
     --spacing-lg: 4rem;
-    --spacing-xl: 6rem;
+    --spacing-xl: 8rem;
     
     /* Transitions */
     --transition-fast: 0.2s ease;
-    --transition-normal: 0.3s ease;
-    --transition-slow: 0.6s ease;
+    --transition-normal: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     
     /* Borders & Radius */
-    --border-radius: 12px;
-    --border-radius-lg: 20px;
-    --border-cyber: 2px solid var(--neon-primary);
+    --border-radius: 0;
+    --border-radius-lg: 0;
+    --border-zen: 1px solid var(--zen-dark);
     
-    /* Fonts */
-    --font-display: 'Orbitron', sans-serif;
-    --font-body: 'Rajdhani', sans-serif;
+    /* Fonts - Japanese Minimalism */
+    --font-display: 'Noto Serif JP', serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
 }
 
 /* ==================== RESET & BASE ==================== */
@@ -73,9 +73,11 @@ body {
     font-family: var(--font-body);
     background-color: var(--bg-dark);
     color: var(--text-primary);
-    line-height: 1.6;
+    line-height: 1.8;
     overflow-x: hidden;
     position: relative;
+    font-weight: 300;
+    letter-spacing: 0.3px;
 }
 
 body::before {
@@ -85,16 +87,30 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 2px,
-            rgba(0, 255, 136, 0.03) 2px,
-            rgba(0, 255, 136, 0.03) 4px
-        );
+    z-index: 0;
+    opacity: 0.15;
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.1) 2px, rgba(255,255,255,0.1) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,0.1) 2px, rgba(255,255,255,0.1) 4px);
+    background-size: 50px 50px;
     pointer-events: none;
-    z-index: 1;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.1;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(255,255,255,0.06) 0%, transparent 50%);
+    background-size: 100% 100%;
+    pointer-events: none;
 }
 
 img {
@@ -112,71 +128,57 @@ ul {
     list-style: none;
 }
 
-/* ==================== CUSTOM SCROLLBAR ==================== */
+/* Ensure content is above texture */
+.navbar,
+.hero,
+section,
+footer,
+.modal,
+.resume-modal {
+    position: relative;
+    z-index: 1;
+}
+
+/* ==================== MINIMAL SCROLLBAR ==================== */
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--bg-darker);
-    border-left: 1px solid rgba(0, 255, 136, 0.2);
+    background: var(--bg-dark);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--gradient-neon);
-    border-radius: 6px;
-    border: 2px solid var(--bg-darker);
+    background: var(--zen-gray);
+    transition: background var(--transition-fast);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--gradient-cyber);
-    box-shadow: var(--glow-primary);
+    background: var(--zen-light);
 }
 
 /* ==================== UTILITIES ==================== */
 .container {
-    max-width: 1400px;
+    max-width: min(1400px, 95vw);
     margin: 0 auto;
     padding: 0 var(--spacing-md);
+    width: 100%;
 }
 
 .text-center {
     text-align: center;
 }
 
-.neon-text {
-    color: var(--neon-primary);
-    text-shadow: var(--glow-primary);
+/* Zen Text Styles */
+.zen-text {
+    color: var(--zen-light);
     font-family: var(--font-display);
+    font-weight: 600;
 }
 
-/* Glitch Effect */
-.glitch {
-    position: relative;
-}
-
-.glitch::before,
-.glitch::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.glitch::before {
-    left: 2px;
-    text-shadow: -2px 0 var(--neon-pink);
-    clip: rect(24px, 550px, 90px, 0);
-    animation: glitch-anim-2 3s infinite linear alternate-reverse;
-}
-
-.glitch::after {
-    left: -2px;
-    text-shadow: -2px 0 var(--neon-secondary);
-    clip: rect(85px, 550px, 140px, 0);
-    animation: glitch-anim 2.5s infinite linear alternate-reverse;
+.zen-accent {
+    color: var(--zen-accent);
+    font-weight: 400;
 }
 
 /* Section Styling */
