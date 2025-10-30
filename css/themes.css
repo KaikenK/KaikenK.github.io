@@ -81,6 +81,14 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+[data-theme="light"] .sun-icon {
+    color: #000000;
+}
+
+[data-theme="light"] .moon-icon {
+    color: #000000;
+}
+
 [data-theme="light"] .cyber-grid {
     display: none;
 }

@@ -675,6 +675,14 @@
     margin-bottom: var(--spacing-md);
     padding-bottom: var(--spacing-md);
     border-bottom: 1px solid var(--zen-gray);
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.zen-footer-left {
+    flex: 1;
+    min-width: 250px;
 }
 
 .zen-footer-logo {
@@ -692,6 +700,8 @@
 .zen-footer-links {
     display: flex;
     gap: 2rem;
+    flex: 1;
+    justify-content: center;
 }
 
 .zen-footer-links a {
@@ -708,6 +718,9 @@
 .zen-footer-social {
     display: flex;
     gap: 1rem;
+    flex: 1;
+    justify-content: flex-end;
+    min-width: 180px;
 }
 
 .zen-footer-social a {
@@ -731,6 +744,8 @@
     text-align: center;
     color: var(--zen-gray);
     font-size: 0.85rem;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 /* ==================== ANIMATIONS ==================== */
@@ -958,6 +973,11 @@
     .zen-footer-content {
         flex-direction: column;
         gap: 2rem;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .zen-footer-left {
         text-align: center;
     }
 }

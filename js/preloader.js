@@ -8,28 +8,25 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let progress = 0;
     const messages = [
-        'Loading assets...',
-        'Initializing components...',
-        'Establishing connection...',
-        'Almost there...',
+        'Loading...',
         'Ready!'
     ];
     
-    // Simulate loading progress
+    // Fast loading progress
     const interval = setInterval(() => {
-        progress += Math.random() * 15;
+        progress += Math.random() * 30 + 20; // Much faster increments
         
         if (progress >= 100) {
             progress = 100;
             clearInterval(interval);
             
-            // Hide preloader after completion
+            // Hide preloader quickly after completion
             setTimeout(() => {
                 preloader.classList.add('fade-out');
                 setTimeout(() => {
                     preloader.style.display = 'none';
-                }, 600);
-            }, 500);
+                }, 300); // Faster fade out
+            }, 100); // Minimal delay
         }
         
         loadingProgress.style.width = progress + '%';
@@ -38,5 +35,5 @@ document.addEventListener('DOMContentLoaded', () => {
         const messageIndex = Math.floor((progress / 100) * (messages.length - 1));
         loadingText.textContent = messages[messageIndex];
         
-    }, 200);
+    }, 80); // Faster interval (was 200ms, now 80ms)
 });
