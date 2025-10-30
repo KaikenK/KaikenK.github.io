@@ -65,6 +65,22 @@
     color: var(--text-primary);
 }
 
+[data-theme="light"] .hamburger span {
+    background: var(--zen-dark);
+    box-shadow: none;
+}
+
+[data-theme="light"] .theme-toggle {
+    background: var(--bg-card-light);
+    border-color: rgba(0, 0, 0, 0.3);
+    color: var(--zen-dark);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+    border-color: var(--zen-dark);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 [data-theme="light"] .cyber-grid {
     display: none;
 }
@@ -571,6 +587,15 @@
 
 [data-theme="light"] .zen-skill-category-detailed h3 {
     border-bottom-color: rgba(0, 0, 0, 0.25);
+}
+
+/* Mobile Menu Light Mode */
+@media (max-width: 768px) {
+    [data-theme="light"] .nav-menu {
+        background: rgba(255, 255, 255, 0.98);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    }
 }
 
 [data-theme="light"] .zen-skill-name {
