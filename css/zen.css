@@ -925,13 +925,13 @@
 .success-message {
     text-align: center;
     padding: var(--spacing-lg);
-    border: 1px solid var(--zen-accent);
-    background: rgba(204, 0, 0, 0.1);
+    border: 1px solid #00cc66;
+    background: rgba(0, 204, 102, 0.1);
 }
 
 .success-message i {
     font-size: 3rem;
-    color: var(--zen-accent);
+    color: #00cc66;
     margin-bottom: var(--spacing-sm);
 }
 
