@@ -265,48 +265,47 @@ export default function Home() {
         <div className="container">
           <div className="zen-section-header">
             <span className="zen-label">EXPERIENCE</span>
-            <h2 className="zen-section-title">Professional Journey</h2>
+            <h2 className="zen-title">Work History</h2>
           </div>
 
-          <div className="zen-experience-grid">
-            <div className="zen-experience-card">
-              <div className="zen-experience-header">
-                <div className="zen-experience-title">
-                  <h3>Backend Engineer Intern</h3>
-                  <span className="zen-experience-company">GoQuant</span>
-                </div>
-                <span className="zen-experience-date">2024 - Present</span>
-              </div>
-              <p>
-                Developing low-latency trading infrastructure and multi-threaded
-                data streaming systems for high-frequency trading applications.
-              </p>
-              <div className="zen-experience-tags">
-                <span>Python</span>
-                <span>FastAPI</span>
-                <span>WebSockets</span>
-                <span>Low-latency Systems</span>
+          <div className="zen-timeline">
+            <div className="zen-timeline-item">
+              <div className="zen-timeline-marker"></div>
+              <div className="zen-timeline-content">
+                <div className="zen-timeline-date">August 2025 - Present</div>
+                <h3 className="zen-timeline-title">Back-End Engineer Intern</h3>
+                <div className="zen-timeline-company">GoQuant</div>
+                <p className="zen-timeline-desc">
+                  Building scalable trading infrastructure and algorithmic
+                  systems. Working with modern tech stacks for high-frequency
+                  trading operations.
+                </p>
               </div>
             </div>
 
-            <div className="zen-experience-card">
-              <div className="zen-experience-header">
-                <div className="zen-experience-title">
-                  <h3>AI Research Intern</h3>
-                  <span className="zen-experience-company">University Lab</span>
-                </div>
-                <span className="zen-experience-date">2023 - 2024</span>
+            <div className="zen-timeline-item">
+              <div className="zen-timeline-marker"></div>
+              <div className="zen-timeline-content">
+                <div className="zen-timeline-date">June 2025 - July 2025</div>
+                <h3 className="zen-timeline-title">Research Intern</h3>
+                <div className="zen-timeline-company">ISFCR Research Lab</div>
+                <p className="zen-timeline-desc">
+                  Conducting research in intrusion detection systems. Published
+                  work in advanced cybersecurity methodologies.
+                </p>
               </div>
-              <p>
-                Built machine learning pipelines for NLP-based summarization and
-                semantic search. Achieved 89% similarity accuracy on academic
-                datasets.
-              </p>
-              <div className="zen-experience-tags">
-                <span>Python</span>
-                <span>PyTorch</span>
-                <span>NLP</span>
-                <span>Vector Databases</span>
+            </div>
+
+            <div className="zen-timeline-item">
+              <div className="zen-timeline-marker"></div>
+              <div className="zen-timeline-content">
+                <div className="zen-timeline-date">July 2024 - August 2024</div>
+                <h3 className="zen-timeline-title">Security Operations Intern</h3>
+                <div className="zen-timeline-company">Tecplix</div>
+                <p className="zen-timeline-desc">
+                  Hands-on experience with Google Chronicle SIEM. Security
+                  monitoring and threat analysis.
+                </p>
               </div>
             </div>
           </div>
@@ -323,41 +322,54 @@ export default function Home() {
         <div className="container">
           <div className="zen-section-header">
             <span className="zen-label">EXPERTISE</span>
-            <h2 className="zen-section-title">Technical Skills</h2>
+            <h2 className="zen-title">Technical Skills</h2>
           </div>
 
           <div className="zen-skills-grid">
-            <div className="zen-skill-card">
-              <div className="zen-skill-icon">
-                <i className="fas fa-chart-line"></i>
+            <div className="zen-skill-category">
+              <h3 className="zen-skill-category-title">Languages</h3>
+              <div className="zen-skill-tags">
+                <span className="zen-skill-tag">Python</span>
+                <span className="zen-skill-tag">JavaScript</span>
+                <span className="zen-skill-tag">C++</span>
+                <span className="zen-skill-tag">Rust</span>
+                <span className="zen-skill-tag">SQL</span>
+                <span className="zen-skill-tag">TypeScript</span>
               </div>
-              <h3>Quantitative Finance</h3>
-              <p>
-                Statistical arbitrage, risk modeling, portfolio optimization,
-                and HFT strategies.
-              </p>
             </div>
 
-            <div className="zen-skill-card">
-              <div className="zen-skill-icon">
-                <i className="fas fa-brain"></i>
+            <div className="zen-skill-category">
+              <h3 className="zen-skill-category-title">Frameworks</h3>
+              <div className="zen-skill-tags">
+                <span className="zen-skill-tag">FastAPI</span>
+                <span className="zen-skill-tag">React</span>
+                <span className="zen-skill-tag">Node.js</span>
+                <span className="zen-skill-tag">Flutter</span>
+                <span className="zen-skill-tag">Express</span>
               </div>
-              <h3>Machine Learning</h3>
-              <p>
-                NLP, transformer models, time-series forecasting, and
-                reinforcement learning.
-              </p>
             </div>
 
-            <div className="zen-skill-card">
-              <div className="zen-skill-icon">
-                <i className="fas fa-code"></i>
+            <div className="zen-skill-category">
+              <h3 className="zen-skill-category-title">Tools &amp; Technologies</h3>
+              <div className="zen-skill-tags">
+                <span className="zen-skill-tag">Git</span>
+                <span className="zen-skill-tag">Docker</span>
+                <span className="zen-skill-tag">PostgreSQL</span>
+                <span className="zen-skill-tag">MongoDB</span>
+                <span className="zen-skill-tag">ChromaDB</span>
+                <span className="zen-skill-tag">Redis</span>
               </div>
-              <h3>Backend Engineering</h3>
-              <p>
-                Low-latency APIs, data streaming, microservices, and cloud-native
-                deployments.
-              </p>
+            </div>
+
+            <div className="zen-skill-category">
+              <h3 className="zen-skill-category-title">Specializations</h3>
+              <div className="zen-skill-tags">
+                <span className="zen-skill-tag">Quantitative Trading</span>
+                <span className="zen-skill-tag">Machine Learning</span>
+                <span className="zen-skill-tag">Blockchain</span>
+                <span className="zen-skill-tag">Cybersecurity</span>
+                <span className="zen-skill-tag">SIEM</span>
+              </div>
             </div>
           </div>
         </div>
@@ -372,17 +384,19 @@ export default function Home() {
       >
         <div className="container">
           <div className="zen-section-header">
-            <span className="zen-label">PROJECTS</span>
-            <h2 className="zen-section-title">Selected Work</h2>
+            <span className="zen-label">PORTFOLIO</span>
+            <h2 className="zen-title">Selected Projects</h2>
           </div>
 
           <div className="zen-projects-grid">
             <article className="zen-project-card">
               <div className="zen-project-number">01</div>
-              <h3 className="zen-project-title">Quantitative Arbitrage Bot</h3>
+              <h3 className="zen-project-title">
+                Quantitative Crypto Arbitrage Bot
+              </h3>
               <p className="zen-project-desc">
-                ML-powered crypto trading system implementing statistical
-                arbitrage strategies across exchanges.
+                High-frequency trading bot with statistical arbitrage models and
+                REST API integrations for CeFi/DeFi exchanges
               </p>
               <div className="zen-tech-stack">
                 <span>Python</span>
@@ -398,8 +412,8 @@ export default function Home() {
               <div className="zen-project-number">02</div>
               <h3 className="zen-project-title">AI Lecture Summarizer</h3>
               <p className="zen-project-desc">
-                NLP-driven summarization with transformer models and vector
-                search.
+                NLP-driven summarization with transformer models and semantic
+                search systems
               </p>
               <div className="zen-tech-stack">
                 <span>NLP</span>
@@ -416,7 +430,7 @@ export default function Home() {
               <h3 className="zen-project-title">PoeBot.ai Content Platform</h3>
               <p className="zen-project-desc">
                 AI-driven content generation tool for automated emails and
-                social media.
+                social media with NLP integration
               </p>
               <div className="zen-tech-stack">
                 <span>React</span>
