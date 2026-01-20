@@ -1,65 +1,513 @@
-import Image from "next/image";
+"use client";
+
+import Script from "next/script";
+import { motion, useReducedMotion } from "framer-motion";
+import {
+  breatheOpacity,
+  fadeScale,
+  fadeUp,
+  staggerContainer,
+} from "../lib/motion";
 
 export default function Home() {
+  const reduceMotion = Boolean(useReducedMotion());
+  const heroStagger = staggerContainer(reduceMotion, 0.1);
+  const heroItem = fadeUp(reduceMotion, 6, 0.7);
+  const sectionItem = fadeUp(reduceMotion, 8, 0.7);
+  const profileItem = fadeScale(reduceMotion, 0.98, 0.7);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      {/* Preloader (unchanged structure, required by existing JS) */}
+      <div id="preloader">
+        <div className="preloader-content">
+          <div className="cyber-loader">
+            <div className="cyber-circle"></div>
+            <div className="cyber-circle"></div>
+            <div className="cyber-circle"></div>
+          </div>
+          <h2 className="neon-text glitch" data-text="INITIALIZING">
+            INITIALIZING
+          </h2>
+          <div className="loading-bar">
+            <div className="loading-progress"></div>
+          </div>
+          <p className="loading-text">Loading Experience...</p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+      </div>
+
+      {/* Navigation (no visual changes; existing CSS handles hover/active transitions) */}
+      <nav className="navbar" id="navbar">
+        <div className="nav-container">
+          <a href="/" className="zen-logo">
+            <img
+              src="/assets/images/logo.png"
+              alt="Dhruv Menon Logo"
+              className="zen-logo-img"
             />
-            Deploy Now
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+          <ul className="nav-menu" id="navMenu">
+            <li className="nav-item">
+              <a href="/" className="nav-link active">
+                Home
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="/about" className="nav-link">
+                About
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="/projects" className="nav-link">
+                Projects
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="/contact" className="nav-link">
+                Contact
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                href="/assets/resume.pdf"
+                className="nav-link"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Resume
+              </a>
+            </li>
+          </ul>
+
+          <div className="nav-right">
+            <button
+              className="theme-toggle"
+              id="themeToggle"
+              aria-label="Toggle theme"
+            >
+              <i className="fas fa-sun sun-icon"></i>
+              <i className="fas fa-moon moon-icon"></i>
+            </button>
+
+            <div className="hamburger" id="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="hero" id="home">
+        <div className="hero-bg-effects">
+          <div className="cyber-grid"></div>
+          <div className="glow-orb glow-orb-1"></div>
+          <div className="glow-orb glow-orb-2"></div>
+          <div className="glow-orb glow-orb-3"></div>
+        </div>
+
+        <div className="container hero-container">
+          <motion.div
+            className="hero-content"
+            data-parallax="0.2"
+            variants={heroStagger}
+            initial="hidden"
+            animate="visible"
+          >
+            {/* Gentle fade + stagger for hero text block */}
+            <motion.div variants={heroItem}>
+              <motion.div
+                className="hero-label"
+                variants={breatheOpacity(reduceMotion)}
+                initial="initial"
+                animate="animate"
+              >
+                <span className="status-dot"></span>
+                <span>Available for opportunities</span>
+              </motion.div>
+            </motion.div>
+
+            <motion.h1 className="hero-title" variants={heroItem}>
+              <span className="greeting">Hello, I&apos;m</span>
+              <span className="name zen-text">DHRUV MENON</span>
+            </motion.h1>
+
+            <motion.div className="hero-subtitle" variants={heroItem}>
+              <span className="zen-accent">
+                Computer Science &amp; Finance Engineer
+              </span>
+            </motion.div>
+
+            <motion.p className="hero-description" variants={heroItem}>
+              Quantitative Finance • Machine Learning • Algorithmic Trading
+              <br />
+              Building intelligent, data-driven financial systems
+            </motion.p>
+
+            <motion.div className="hero-buttons" variants={heroItem}>
+              {/* Subtle CTA lift + fade */}
+              <motion.a
+                href="/projects"
+                className="btn btn-primary zen-btn zen-btn-primary"
+                whileHover={{ opacity: 0.95, transition: { ease: "easeOut" } }}
+              >
+                <span>View My Work</span>
+                <i className="fas fa-arrow-right"></i>
+              </motion.a>
+              <motion.a
+                href="/contact"
+                className="btn btn-secondary zen-btn zen-btn-primary"
+                whileHover={{ opacity: 0.95, transition: { ease: "easeOut" } }}
+              >
+                <span>Get In Touch</span>
+                <i className="fas fa-paper-plane"></i>
+              </motion.a>
+            </motion.div>
+
+            <motion.div className="hero-social" variants={heroItem}>
+              <a
+                href="https://github.com/KaikenK"
+                target="_blank"
+                rel="noreferrer"
+                className="social-icon"
+                aria-label="GitHub"
+              >
+                <i className="fab fa-github"></i>
+              </a>
+              <a
+                href="https://linkedin.com/in/dhruv-menon-"
+                target="_blank"
+                rel="noreferrer"
+                className="social-icon"
+                aria-label="LinkedIn"
+              >
+                <i className="fab fa-linkedin"></i>
+              </a>
+              <a href="tel:+918660856770" className="social-icon" aria-label="Phone">
+                <i className="fas fa-phone"></i>
+              </a>
+              <a
+                href="mailto:dhruvmenon2005@gmail.com"
+                className="social-icon"
+                aria-label="Email"
+              >
+                <i className="fas fa-envelope"></i>
+              </a>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            className="hero-visual"
+            data-parallax="0.3"
+            variants={profileItem}
+            initial="hidden"
+            animate="visible"
+            whileHover={{ scale: reduceMotion ? 1 : 1.01 }}
+            transition={{ ease: "easeOut", duration: 0.6 }}
+          >
+            {/* Subtle profile fade/scale for depth */}
+            <div className="zen-container">
+              <div className="zen-profile-photo">
+                <img src="/assets/images/profile.jpeg" alt="Dhruv Menon" />
+                <div className="zen-photo-border"></div>
+              </div>
+
+              <div className="zen-text-stack">
+                <span className="zen-subtitle">Building the Future</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <motion.section
+        className="zen-stats"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionItem}
+      >
+        {/* Gentle in-view fade for scroll sections */}
+        <div className="container">
+          <div className="zen-stats-grid">
+            <div className="zen-stat">
+              <span className="zen-stat-number">3+</span>
+              <span className="zen-stat-label">Years Experience</span>
+            </div>
+            <div className="zen-divider"></div>
+            <div className="zen-stat">
+              <span className="zen-stat-number">6+</span>
+              <span className="zen-stat-label">Major Projects</span>
+            </div>
+            <div className="zen-divider"></div>
+            <div className="zen-stat">
+              <span className="zen-stat-number">8.87</span>
+              <span className="zen-stat-label">CGPA</span>
+            </div>
+            <div className="zen-divider"></div>
+            <div className="zen-stat">
+              <span className="zen-stat-number">PES</span>
+              <span className="zen-stat-label">University</span>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      <motion.section
+        className="zen-experience"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionItem}
+      >
+        <div className="container">
+          <div className="zen-section-header">
+            <span className="zen-label">EXPERIENCE</span>
+            <h2 className="zen-section-title">Professional Journey</h2>
+          </div>
+
+          <div className="zen-experience-grid">
+            <div className="zen-experience-card">
+              <div className="zen-experience-header">
+                <div className="zen-experience-title">
+                  <h3>Backend Engineer Intern</h3>
+                  <span className="zen-experience-company">GoQuant</span>
+                </div>
+                <span className="zen-experience-date">2024 - Present</span>
+              </div>
+              <p>
+                Developing low-latency trading infrastructure and multi-threaded
+                data streaming systems for high-frequency trading applications.
+              </p>
+              <div className="zen-experience-tags">
+                <span>Python</span>
+                <span>FastAPI</span>
+                <span>WebSockets</span>
+                <span>Low-latency Systems</span>
+              </div>
+            </div>
+
+            <div className="zen-experience-card">
+              <div className="zen-experience-header">
+                <div className="zen-experience-title">
+                  <h3>AI Research Intern</h3>
+                  <span className="zen-experience-company">University Lab</span>
+                </div>
+                <span className="zen-experience-date">2023 - 2024</span>
+              </div>
+              <p>
+                Built machine learning pipelines for NLP-based summarization and
+                semantic search. Achieved 89% similarity accuracy on academic
+                datasets.
+              </p>
+              <div className="zen-experience-tags">
+                <span>Python</span>
+                <span>PyTorch</span>
+                <span>NLP</span>
+                <span>Vector Databases</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      <motion.section
+        className="zen-skills"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionItem}
+      >
+        <div className="container">
+          <div className="zen-section-header">
+            <span className="zen-label">EXPERTISE</span>
+            <h2 className="zen-section-title">Technical Skills</h2>
+          </div>
+
+          <div className="zen-skills-grid">
+            <div className="zen-skill-card">
+              <div className="zen-skill-icon">
+                <i className="fas fa-chart-line"></i>
+              </div>
+              <h3>Quantitative Finance</h3>
+              <p>
+                Statistical arbitrage, risk modeling, portfolio optimization,
+                and HFT strategies.
+              </p>
+            </div>
+
+            <div className="zen-skill-card">
+              <div className="zen-skill-icon">
+                <i className="fas fa-brain"></i>
+              </div>
+              <h3>Machine Learning</h3>
+              <p>
+                NLP, transformer models, time-series forecasting, and
+                reinforcement learning.
+              </p>
+            </div>
+
+            <div className="zen-skill-card">
+              <div className="zen-skill-icon">
+                <i className="fas fa-code"></i>
+              </div>
+              <h3>Backend Engineering</h3>
+              <p>
+                Low-latency APIs, data streaming, microservices, and cloud-native
+                deployments.
+              </p>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      <motion.section
+        className="zen-projects"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionItem}
+      >
+        <div className="container">
+          <div className="zen-section-header">
+            <span className="zen-label">PROJECTS</span>
+            <h2 className="zen-section-title">Selected Work</h2>
+          </div>
+
+          <div className="zen-projects-grid">
+            <article className="zen-project-card">
+              <div className="zen-project-number">01</div>
+              <h3 className="zen-project-title">Quantitative Arbitrage Bot</h3>
+              <p className="zen-project-desc">
+                ML-powered crypto trading system implementing statistical
+                arbitrage strategies across exchanges.
+              </p>
+              <div className="zen-tech-stack">
+                <span>Python</span>
+                <span>ML</span>
+                <span>Quant Finance</span>
+              </div>
+              <a href="/projects" className="zen-project-link">
+                View Project →
+              </a>
+            </article>
+
+            <article className="zen-project-card">
+              <div className="zen-project-number">02</div>
+              <h3 className="zen-project-title">AI Lecture Summarizer</h3>
+              <p className="zen-project-desc">
+                NLP-driven summarization with transformer models and vector
+                search.
+              </p>
+              <div className="zen-tech-stack">
+                <span>NLP</span>
+                <span>RAG</span>
+                <span>MiniLM</span>
+              </div>
+              <a href="/projects" className="zen-project-link">
+                View Project →
+              </a>
+            </article>
+
+            <article className="zen-project-card">
+              <div className="zen-project-number">03</div>
+              <h3 className="zen-project-title">PoeBot.ai Content Platform</h3>
+              <p className="zen-project-desc">
+                AI-driven content generation tool for automated emails and
+                social media.
+              </p>
+              <div className="zen-tech-stack">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>Flutter</span>
+              </div>
+              <a href="/projects" className="zen-project-link">
+                View Project →
+              </a>
+            </article>
+          </div>
+        </div>
+      </motion.section>
+
+      <footer className="zen-footer">
+        <div className="container">
+          <div className="zen-footer-content">
+            <div className="zen-footer-left">
+              <div className="zen-footer-logo">Dhruv Menon</div>
+              <p className="zen-footer-tagline">
+                Computer Science &amp; Finance Engineer
+              </p>
+            </div>
+
+            <div className="zen-footer-links">
+              <a href="/">Home</a>
+              <a href="/about">About</a>
+              <a href="/projects">Projects</a>
+              <a href="/contact">Contact</a>
+            </div>
+
+            <div className="zen-footer-social">
+              <a
+                href="https://github.com/KaikenK"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+              >
+                <i className="fab fa-github"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/dhruv-menon-/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+              >
+                <i className="fab fa-linkedin"></i>
+              </a>
+              <a href="mailto:dhruvmenon2005@gmail.com" aria-label="Email">
+                <i className="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <div className="zen-footer-bottom">
+            <p>© 2025 Dhruv Menon · Bangalore, India</p>
+          </div>
+        </div>
+      </footer>
+
+      <div id="resumeModal" className="resume-modal">
+        <div className="resume-modal-content">
+          <button className="resume-modal-close" id="closeResumeBtn">
+            <i className="fas fa-times"></i>
+          </button>
+          <div className="resume-modal-header">
+            <h2>Resume</h2>
+            <a
+              href="/assets/resume.pdf"
+              id="downloadResumeBtn"
+              className="zen-btn zen-btn-primary"
+              download="Dhruv_Menon_Resume.pdf"
+            >
+              <i className="fas fa-download"></i>
+              <span>Download PDF</span>
+            </a>
+          </div>
+          <div className="resume-viewer">
+            <object
+              id="resumePDF"
+              data="/assets/resume.pdf"
+              type="application/pdf"
+            >
+              <embed src="/assets/resume.pdf" type="application/pdf" />
+            </object>
+          </div>
+        </div>
+      </div>
+
+      <Script src="/js/stats.js" strategy="afterInteractive" />
+      <Script src="/js/resume-modal.js" strategy="afterInteractive" />
+    </>
   );
 }
