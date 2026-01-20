@@ -65,7 +65,6 @@ export default function RootLayout({
         {children}
         <Script src="/js/preloader.js" strategy="afterInteractive" />
         <Script src="/js/theme-toggle.js" strategy="afterInteractive" />
-        <Script src="/js/parallax.js" strategy="afterInteractive" />
         <Script src="/js/main.js" strategy="afterInteractive" />
       </body>
     </html>

@@ -111,7 +111,6 @@ export default function Home() {
         <div className="container hero-container">
           <motion.div
             className="hero-content"
-            data-parallax="0.2"
             variants={heroStagger}
             initial="hidden"
             animate="visible"
@@ -200,7 +199,6 @@ export default function Home() {
 
           <motion.div
             className="hero-visual"
-            data-parallax="0.3"
             variants={profileItem}
             initial="hidden"
             animate="visible"
