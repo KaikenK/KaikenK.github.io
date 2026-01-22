@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   description:
     "Dhruv Menon - Computer Science & Finance Engineer. Specialized in quantitative trading, blockchain, and cybersecurity.",
   themeColor: "#000000",
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "Dhruv Menon - CS & Finance Engineer",
     description: "Quantitative Trading • Blockchain • Cybersecurity",
@@ -30,10 +34,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo.png" />
-        <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/logo.png" />
-        <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/logo.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logo.png" />
+        <link rel="icon" type="image/png" href="/icon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
