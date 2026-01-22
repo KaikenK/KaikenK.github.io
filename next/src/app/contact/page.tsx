@@ -2,11 +2,14 @@
 
 import { useEffect } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { fadeUp } from "../../lib/motion";
+import { systemReveal, systemStep } from "../../lib/motion";
 
 export default function ContactPage() {
   const reduceMotion = Boolean(useReducedMotion());
-  const sectionItem = fadeUp(reduceMotion, 8, 0.7);
+  // Slower hero, faster interactions for a measured rhythm.
+  const headerReveal = systemReveal(reduceMotion, 6, 0.9);
+  const sectionReveal = systemReveal(reduceMotion, 6, 0.7);
+  const stepReveal = systemStep(reduceMotion, 5, 0.4, 0.045);
 
   useEffect(() => {
     if (window.location.search.includes("success=true")) {
@@ -103,7 +106,7 @@ export default function ContactPage() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.6 }}
-        variants={sectionItem}
+        variants={headerReveal}
       >
         {/* Subtle in-view fade for header */}
         <div className="container">
@@ -123,7 +126,7 @@ export default function ContactPage() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        variants={sectionItem}
+        variants={sectionReveal}
       >
         <div className="container">
           <div className="contact-grid">
@@ -134,8 +137,9 @@ export default function ContactPage() {
                 just a friendly hello.
               </p>
 
+              {/* System step reveal: ordered scan through contact details. */}
               <div className="contact-details">
-                <div className="contact-item">
+                <motion.div className="contact-item" variants={stepReveal} custom={0}>
                   <div className="contact-icon">
                     <i className="fas fa-envelope"></i>
                   </div>
@@ -145,9 +149,9 @@ export default function ContactPage() {
                       dhruvmenon2005@gmail.com
                     </a>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="contact-item">
+                <motion.div className="contact-item" variants={stepReveal} custom={1}>
                   <div className="contact-icon">
                     <i className="fas fa-phone"></i>
                   </div>
@@ -155,9 +159,9 @@ export default function ContactPage() {
                     <h3>Phone</h3>
                     <a href="tel:+918660856770">+91 8660856770</a>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="contact-item">
+                <motion.div className="contact-item" variants={stepReveal} custom={2}>
                   <div className="contact-icon">
                     <i className="fas fa-map-marker-alt"></i>
                   </div>
@@ -165,9 +169,9 @@ export default function ContactPage() {
                     <h3>Location</h3>
                     <p>Bangalore, India</p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="contact-item">
+                <motion.div className="contact-item" variants={stepReveal} custom={3}>
                   <div className="contact-icon">
                     <i className="fab fa-linkedin"></i>
                   </div>
@@ -181,9 +185,9 @@ export default function ContactPage() {
                       linkedin.com/in/dhruvmenon2005
                     </a>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="contact-item">
+                <motion.div className="contact-item" variants={stepReveal} custom={4}>
                   <div className="contact-icon">
                     <i className="fab fa-github"></i>
                   </div>
@@ -197,7 +201,7 @@ export default function ContactPage() {
                       github.com/KaikenK
                     </a>
                   </div>
-                </div>
+                </motion.div>
               </div>
 
               <div className="contact-social">
@@ -248,7 +252,8 @@ export default function ContactPage() {
                   value="https://KaikenK.github.io/contact/?success=true"
                 />
 
-                <div className="form-group">
+                {/* Step-wise field reveal mirrors form progression. */}
+                <motion.div className="form-group" variants={stepReveal} custom={5}>
                   <label htmlFor="name">Name *</label>
                   <input
                     type="text"
@@ -257,9 +262,9 @@ export default function ContactPage() {
                     required
                     placeholder="Your name"
                   />
-                </div>
+                </motion.div>
 
-                <div className="form-group">
+                <motion.div className="form-group" variants={stepReveal} custom={6}>
                   <label htmlFor="email">Email *</label>
                   <input
                     type="email"
@@ -268,9 +273,9 @@ export default function ContactPage() {
                     required
                     placeholder="your.email@example.com"
                   />
-                </div>
+                </motion.div>
 
-                <div className="form-group">
+                <motion.div className="form-group" variants={stepReveal} custom={7}>
                   <label htmlFor="subject">Subject *</label>
                   <input
                     type="text"
@@ -279,9 +284,9 @@ export default function ContactPage() {
                     required
                     placeholder="What is this about?"
                   />
-                </div>
+                </motion.div>
 
-                <div className="form-group">
+                <motion.div className="form-group" variants={stepReveal} custom={8}>
                   <label htmlFor="message">Message *</label>
                   <textarea
                     id="message"
@@ -290,12 +295,17 @@ export default function ContactPage() {
                     required
                     placeholder="Your message here..."
                   ></textarea>
-                </div>
+                </motion.div>
 
-                <button type="submit" className="zen-btn zen-btn-primary submit-btn">
+                <motion.button
+                  type="submit"
+                  className="zen-btn zen-btn-primary submit-btn"
+                  variants={stepReveal}
+                  custom={9}
+                >
                   Send Message
                   <i className="fas fa-paper-plane"></i>
-                </button>
+                </motion.button>
               </form>
 
               <div

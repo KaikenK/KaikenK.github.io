@@ -41,6 +41,48 @@ export const fadeUp = (
   },
 });
 
+// System-inspired reveal: restrained, data-like progression without visual flair.
+export const systemReveal = (
+  reduceMotion: boolean,
+  y = 6,
+  duration = 0.65
+): Variants => ({
+  hidden: {
+    opacity: 0,
+    y: reduceMotion ? 0 : y,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+});
+
+// Sequential step reveal for lists/fields to imply hierarchy and order.
+export const systemStep = (
+  reduceMotion: boolean,
+  y = 6,
+  duration = 0.45,
+  step = 0.05
+): Variants => ({
+  hidden: {
+    opacity: 0,
+    y: reduceMotion ? 0 : y,
+  },
+  visible: (index = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration,
+      delay: reduceMotion ? 0 : index * step,
+      ease: "easeOut",
+    },
+  }),
+});
+
 export const fadeScale = (
   reduceMotion: boolean,
   scale = 0.98,
